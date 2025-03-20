@@ -1,0 +1,30 @@
+.icon-input-left {
+    left: 2rem; /* Căn lề trái */
+    top: 50%; /* Đưa icon vào giữa */
+    transform: translateY(-50%); /* Căn giữa icon */
+    position: absolute;
+    color: gray;
+    font-size: 16px;
+}
+
+.icon-input-right {
+    right: 2rem; /* Căn lề trái */
+    top: 50%; /* Đưa icon vào giữa */
+    transform: translateY(-50%); /* Căn giữa icon */
+    position: absolute;
+    color: gray;
+    font-size: 16px;
+}
+
+.salary-input {
+    width: 80px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: right;
+}
+
+
+.pl-5 { 
+    padding-left: 3rem !important; /* Chừa khoảng trống cho icon bên trái */
+}

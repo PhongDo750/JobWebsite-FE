@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Website</title>
+    <link rel="shortcut icon" href="/assets/image/landing_page_right.webp" type="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap&amp;subset=vietnamese" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/icon/fontawesome-free-6.2.0-web/css/all.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
+</head>
+<body>
+    <div id="navbar-container"></div>
+
+    <ul class="nav flex-column nav-pills bg-white p-2 h-100 w-20 position-fixed top-0 start-0 rounded-2 shadow-lg mt-5">
+        <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#info">Thông tin công ty</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#post-job">Đăng tin tuyển dụng</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#get-job">Thông tin tuyển dụng</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#change-info">Thay đổi thông tin</a>
+        </li>
+    </ul>
+
+    <div class="position-relative top-2 h-100 left-25 mt-5" style="max-width: 80%; margin-left: 230px;">
+        <div class="rounded-1 shadow p-3">
+            <div class="tab-content">
+                <div id="info" class="tab-pane fade show active">
+                    <div id="recruiter-info">
+
+                    </div>
+    
+                    <h2>Vị trí đang tuyển</h2>
+                    <div class="mt-2 d-flex justify-content-center flex-column align-items-center">
+                        <div id="jobList" class="w-80-custom">
+                            
+                        </div>
+        
+                        <div id="pagination" class="d-flex justify-content-center mt-3 w-80-custom">
+                            <!-- Buttons will be dynamically inserted here -->
+                        </div>
+                    </div>
+                </div>
+    
+                <div id="post-job" class="tab-pane fade">
+                    <h5 class="text-blod w-100">Thông tin cơ bản</h5>
+                    <div class="d-flex flex-column">
+                        <label for="name-job">Tiêu đề tuyển dụng <span class="text-danger">*</span></label>
+                        <input class="form-control" id="name-job" placeholder="Nhập công việc tuyển dụng">
+                    </div>
+    
+                    <div class="row align-items-center mt-2">
+                        <div class="col-5 d-flex flex-column position-relative dropdown">
+                            <label for="occupation">Ngành nghề <span class="text-danger">*</span></label>
+                            <input class="form-control  dropdown-toggle" id="occupation" placeholder="Chọn ngành nghề">
+                            <i class="fa-solid fa-caret-down position-absolute" 
+                            style="top: 70%; right: 20px; transform: translateY(-50%); color: gray;"></i>
+                            <ul class="dropdown-menu scroll-custom mt-custom-recruiter" id="occupationList"></ul>
+                        </div>
+    
+                        <div class="col-3 d-flex flex-column position-relative dropdown">
+                            <label for="experience">Kinh nghiệm<span class="text-danger">*</span></label>
+                            <input class="form-control dropdown-toggle" id="experience" placeholder="Chọn kinh nghiệm">
+                            <i class="fa-solid fa-caret-down position-absolute" 
+                            style="top: 70%; right: 20px; transform: translateY(-50%); color: gray;"></i>
+                            <ul class="dropdown-menu scroll-custom mt-custom-recruiter" id="experienceList"></ul>
+                        </div>
+    
+                        <div class="col-2 d-flex flex-column position-relative">
+                            <label for="head-count">Số lượng tuyển<span class="text-danger">*</span></label>
+                            <input class="form-control" id="head-count" placeholder="Nhập số lượng">
+                        </div>
+    
+                        <div class="col-2 d-flex flex-column position-relative">
+                            <label for="expiration-date">Ngày hết hạn<span class="text-danger">*</span></label>
+                            <input type="date" class="form-control" id="expiration-date" placeholder="Ngày hết hạn">
+                        </div>
+                    </div>
+    
+                    <div class="row align-items-center mt-2">
+                        <div class="col-5 d-flex flex-column position-relative dropdown">
+                            <label for="province">Tỉnh/Thành phố <span class="text-danger">*</span></label>
+                            <input class="form-control dropdown-toggle" id="province" placeholder="Chọn thành phố">
+                            <i class="fa-solid fa-caret-down position-absolute" 
+                            style="top: 70%; right: 20px; transform: translateY(-50%); color: gray;"></i>
+                            <ul class="dropdown-menu scroll-custom mt-custom-recruiter" id="provinceList"></ul>
+                        </div>
+    
+                        <div class="col-7 d-flex flex-column">
+                            <label for="address">Địa chỉ<span class="text-danger">*</span></label>
+                            <input class="form-control" id="address" placeholder="Nhập địa chỉ">
+                        </div>
+                    </div>
+    
+                    <h5 class="text-blod w-100 mt-4">Yêu cầu công việc</h5>
+                    <div class="row align-items-center mt-2">
+                        <div class="col-5 d-flex flex-column position-relative dropdown">
+                            <label for="job-type">Hình thức làm việc<span class="text-danger">*</span></label>
+                            <input class="form-control dropdown-toggle" id="jobType" placeholder="Chọn hình thức làm việc">
+                            <i class="fa-solid fa-caret-down position-absolute" 
+                            style="top: 70%; right: 20px; transform: translateY(-50%); color: gray;"></i>
+                            <ul class="dropdown-menu scroll-custom mt-custom-recruiter" id="jobTypeList"></ul>
+                        </div>
+    
+                        <div class="col-3 d-flex flex-column position-relative dropdown">
+                            <label for="job-level">Cấp bậc<span class="text-danger">*</span></label>
+                            <input class="form-control dropdown-toggle" id="jobLevel" placeholder="Chọn cấp bậc">
+                            <i class="fa-solid fa-caret-down position-absolute" 
+                            style="top: 70%; right: 20px; transform: translateY(-50%); color: gray;"></i>
+                            <ul class="dropdown-menu scroll-custom mt-custom-recruiter" id="jobLevelList"></ul>
+                        </div>
+    
+                        <div class="col-2 d-flex flex-column">
+                            <label for="min-salary">Lương tối thiểu<span class="text-danger">*</span></label>
+                            <input class="form-control" id="min-salary" placeholder="Nhập lương tối thiểu">
+                        </div>
+    
+                        <div class="col-2 d-flex flex-column">
+                            <label for="max-salary">Lương tối đa<span class="text-danger">*</span></label>
+                            <input class="form-control" id="max-salary" placeholder="Nhập lương tối đa">
+                        </div>
+                    </div>
+    
+                    <div class="row align-items-center mt-2">
+                        <div class="col-5 d-flex flex-column">
+                            <label for="probation-period">Thời gian thử việc</label>
+                            <input class="form-control" id="probation-period" placeholder="Nhâp thời gian thử việc">
+                        </div>
+    
+                        <div class="col-3 d-flex flex-column">
+                            <label for="educationLevel">Bằng cấp</label>
+                            <input class="form-control" id="educationLevel" placeholder="Chọn cấp bậc">
+                            <ul class="dropdown-menu scroll-custom mt-custom-recruiter" id="educationLevelList"></ul>
+                        </div>
+                    </div>
+    
+                    <h5 class="text-blod w-100 mt-4">Công việc chi tiết</h5>
+                    <div class="d-flex flex-column">
+                        <label>Mô tả chi tiết<span class="text-danger">*</span></label>
+                        <textarea id="editor1"></textarea>
+                    </div>
+    
+                    <div class="d-flex flex-column mt-4">
+                        <label>Yêu cầu chi tiết<span class="text-danger">*</span></label>
+                        <textarea id="editor2"></textarea>
+                    </div>
+    
+                    <div class="d-flex flex-column mt-4">
+                        <label>Quyền lợi<span class="text-danger">*</span></label>
+                        <textarea id="editor3"></textarea>
+                    </div>
+    
+                    <div class="d-flex justify-content-end mt-4">
+                        <button id="createJob" class="btn bg-custom text-white-custom">
+                            Đăng tuyển
+                        </button>
+                    </div>
+                </div>
+    
+                <div id="get-job" class="tab-pane fade">
+                    <h2 class="mb-3">Danh sách ứng viên</h2>
+                    <select id="jobState" class="form-select w-25" onchange="loadJobsByState(); toggleActionColumn()">
+                        <option value="ALL">Tất cả</option>
+                        <option value="PENDING_APPROVAL">Chờ xét duyệt</option>
+                        <option value="ACCEPTED">Đã duyệt</option>
+                        <option value="REJECTED">Từ chối</option>
+                    </select>
+        
+                    <div id="job-list" class="mt-4">
+                        <table class="table table-bordered">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Tên ứng viên</th>
+                                    <th>Hồ sơ ứng viên</th>
+                                    <th>Tin đăng</th>
+                                    <th>Thời gian nộp</th>
+                                    <th class="action-column">Hành động</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="jobs">
+
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                    <div id="pagination-1" class="d-flex justify-content-center mt-3 w-80-custom">
+                            
+                    </div>
+                </div>
+
+                <div id="change-info" class="tab-pane fade">
+                    <h2>Chỉnh sửa thông tin</h2>
+                    <div class="row align-items-center">
+                        <div class="col-6">
+                            <label for="nameCompany">Tên công ty</label>
+                            <input class="form-control mt-2" id="nameCompany" placeholder="Nhập tên công ty">
+                        </div>
+
+                        <div class="col-6">
+                            <div class="ms-4">
+                                <img src="/assets/image/landing_page_right.webp" class="previewImage w-25 me-4">
+                                <label for="imageCompany" class="btn btn-outline-primary">Thay đổi ảnh đại diện</label>
+                                <input type="file" id="imageCompany" class="d-none imageInput">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center mt-4">
+                        <div class="col-6">
+                            <label for="address-1">Địa chỉ</label>
+                            <input class="form-control mt-2" id="address-1" placeholder="Nhập địa chỉ">
+                        </div>
+
+                        <div class="col-6">
+                            <div class="ms-4">
+                                <img src="/assets/image/landing_page_right.webp" class="previewImage w-25 me-4">
+                                <label for="backgroundImg" class="btn btn-outline-primary">Thay đổi ảnh nền</label>
+                                <input type="file" id="backgroundImg" class="d-none imageInput">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column mt-2">
+                        <label>Mô tả công ty<span class="text-danger">*</span></label>
+                        <textarea id="editor4"></textarea>
+                    </div>
+
+                    <div class="d-flex justify-content-end mt-4">
+                        <button id="updateInfomationCompany" class="btn bg-custom text-white-custom">
+                            Thay đổi thông tin
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="notificationModalLabel">Nhận thông báo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Bạn có muốn nhận thông báo từ chúng tôi?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" id="allow-notifications">Cho phép</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Từ chối</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/components/layouts/header.js"></script>
+    <script src="/js/getFieldJob.js"></script>
+    <script src="/js/logout.js"></script>
+    <script src="/js/recruiter.js"></script>
+    <script src="/js/notification.js"></script>
+    <script>
+        loadNavbar("navbar-container")
+    </script>
+</body>
+</html>

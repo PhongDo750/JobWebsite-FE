@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Website</title>
+    <link rel="shortcut icon" href="/assets/image/landing_page_right.webp" type="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap&amp;subset=vietnamese" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/icon/fontawesome-free-6.2.0-web/css/all.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+        <div class="row w-100">
+             <div class="col-6">
+                <img src="/assets/image/landing_page_right.webp" style="max-width: 95%;">
+             </div>
+
+             <div class="col-6 rounded-2 shadow p-4">
+                <h4 id="form-title" class="text-start fw-bold">Thông tin tài khoản</h4>
+                <form id="register-form">
+                    <div class="row mb-3 align-items-center">
+                        <label for="username" class="col-5 col-form-label">
+                            Tên tài khoản
+                            <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-7">
+                            <input type="text" class="form-control" id="username" name="password" required>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3 align-items-center">
+                        <label for="password" class="col-5 col-form-label">
+                            Mật khẩu
+                            <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-7">
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3 align-items-center">
+                        <label for="mail" class="col-5 col-form-label">
+                            Email
+                            <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-7">
+                            <input type="email" class="form-control" id="mail" name="mail" required>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3 align-items-center">
+                        <label for="phone-number" class="col-5 col-form-label">
+                            Số điện thoại
+                            <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-7">
+                            <input type="text" class="form-control" id="phone-number" name="phone-number" required>
+                        </div>
+                    </div>
+
+                    <div id="user-info" class="d-none-custom">
+                        <div class="row mb-3 align-items-center">
+                            <label for="full-name" class="col-5 col-form-label">
+                                Tên đầy đủ 
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-7">
+                                <input type="text" class="form-control" id="full-name" name="full-name">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3 align-items-center">
+                            <label for="address" class="col-5 col-form-label">
+                                Địa chỉ
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-7">
+                                <input type="text" class="form-control" id="address" name="address">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="company-info" class="d-none">
+                        <div class="row mb-3 align-items-center">
+                            <label for="company-name" class="col-5 col-form-label">
+                                Tên công ty 
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-7">
+                                <input type="text" class="form-control" id="company-name"  name="company-name">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3 align-items-center">
+                            <label for="company-address" class="col-5 col-form-label">
+                                Địa chỉ
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-7">
+                                <input type="text" class="form-control" id="company-address"  name="company-address">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center">
+                        <div class="col-8">
+                            <p class="pt-3">
+                                Bạn đã có tài khoản?
+                                <a href="/components/login/login.html" class="text-custom">
+                                    Đăng nhập
+                                </a>
+                            </p>
+                        </div>
+
+                        <button type="submit" class="btn bg-custom col-4 text-white-custom">
+                            Hoàn tất đăng ký
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="/js/handleSignUp.js" defer></script>
+    <script src="/js/sign-up.js"></script>
+</body>
+</html>

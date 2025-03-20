@@ -1,0 +1,145 @@
+.bg-custom {
+    background-color: #00AAF9 !important;
+}
+
+.bg-custom-224DA4 {
+    background-color: #224DA4 !important;
+}
+
+.text-custom {
+    color: #00AAF9;
+}
+
+.text-white-custom {
+    color: #FFFFFF !important;
+}
+
+.d-none-custom {
+    display: none;
+}
+
+.custom-link {
+    color: #00AAF9; /* Màu giống link */
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: inherit;
+}
+
+.custom-link:hover {
+    color: #0056b3; /* Hiệu ứng hover */
+}
+
+.border-radius-custom {
+    border-radius: .2rem !important;
+}
+
+.col-custom-1 {
+    flex : 0 0 auto !important;
+    width: 10.66666667% !important;
+}
+
+.col-custom-2 {
+    flex : 0 0 auto !important;
+    width: 11.66666667% !important;
+}
+
+.divider {
+    width: 2px;
+    height: 100px;
+    background-color: black;
+}
+
+.hover-custom:hover {
+    color: black;
+}
+
+.scroll-custom {
+    max-height: 200px;
+    overflow-y: auto; 
+}
+
+.w-10 {
+    width: 10%;
+}
+
+.w-15-custom {
+    width: 15%;
+}
+
+.w-96-custom {
+    width: 96% !important;
+}
+
+.w-80-custom {
+    width: 80% !important;
+}
+
+.ad-container {
+    position: sticky;
+    top: 20px;
+}
+
+.mt-custom-recruiter {
+    margin-top: 4rem !important;
+}
+
+.text-089468-custom {
+    color: #089468;
+}
+
+.ps-1point5-custom {
+    padding-left : 1.5rem !important;
+}
+
+.fs-0-6-custom {
+    font-size: 0.6rem !important;
+}
+
+.start-10-custom {
+    left: 40% !important;
+}
+
+.top-65-custom {
+    top: 65% !important;
+}
+
+.banner-container {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.banner-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-container {
+    position: relative;
+    top: -50px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: #008000;
+    border-radius: 0 0 10px 10px;
+    color: white;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    background: white;
+    padding: 5px;
+}
+
+.profile-info {
+    margin-left: 20px;
+}
+
+.follow-button {
+    margin-left: auto;
+}
